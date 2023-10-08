@@ -54,14 +54,12 @@ const seriesDB = {
         }
     },
     writeGenres: function () {
-        for (let i = 0; i < 3; i++) {
-            const genre = prompt(`Yaxshi ko'rgan janiringiz #${i + 1}`);
-            if (genre === "" || genre === null) {
-                console.log("Siz noto'g'ri ma'lumot kiritdingiz");
-                i--;
-            } else {
-                seriesDB.genres[i] = genre;
-            }
+        let genres = prompt("Yaxshi ko'rgan janiringizni vergul bilan yozing");
+        if (genres === "" || genres === null) {
+            console.log("Siz noto'g'ri ma'lumot kiritdingiz");
+            i--;
+        } else {
+            seriesDB.genres = genres.split(", ");
         }
         seriesDB.genres.forEach((item, index) => {
             console.log(
