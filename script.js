@@ -1,26 +1,21 @@
 "use strict";
 
-let numberOfSeries;
-
-function startUpp() {
-    numberOfSeries = +prompt("Nechta serial ko'rdingiz?", "");
-    while (
-        numberOfSeries == "" ||
-        numberOfSeries == null ||
-        numberOfSeries == NaN
-    ) {
-        numberOfSeries = +prompt("Nechta serial ko'rdingiz?", "");
-    }
-}
-startUpp();
-console.log(numberOfSeries);
-
 const seriesDB = {
-    count: numberOfSeries,
+    count: 0,
     series: {},
     actors: {},
     genres: [],
     private: false,
+    start: function () {
+        seriesDB.count = +prompt("Nechta serial ko'rdingiz?", "");
+        while (
+            seriesDB.count == "" ||
+            seriesDB.count == null ||
+            seriesDB.count == NaN
+        ) {
+            seriesDB.count = +prompt("Nechta serial ko'rdingiz?", "");
+        }
+    },
 };
 
 function rememberMySeries() {
